@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Home</ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="showLocation()">
+          <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="kanit">
+  <div id="map" class="map"></div>
+  <!-- <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          <button ion-button block icon-left (click)="showLocation()" large>
+            <ion-icon ios="ios-locate" md="md-locate"></ion-icon> ค้นหาตำแหน่งปัจจุบัน
+          </button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block icon-left (click)="gotoReport()" large>
+            <ion-icon ios="ios-document" md="md-document"></ion-icon> รายงาน 
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar  color="royal" >
+      <p></p>
+      <ion-buttons end>
+        <button ion-button icon-right (click)="gotoReport()">
+            สร้างรายงาน
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+
+
+

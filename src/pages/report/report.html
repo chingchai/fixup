@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>report</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="kanit">
+  <form novalidate [formGroup]="reportForm" >
+    <ion-list>
+
+      <ion-item>
+        <ion-label color="primary" stacked>ตำแหน่ง</ion-label>
+        <ion-input type="text" placeholder="X: {{location[0]}} Y: {{location[1]}}" readonly></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>ชื่อถนน</ion-label>
+        <ion-input type="text" formControlName="title" placeholder="กรอกชื่อถนน"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>รายละเอียด</ion-label>
+        <ion-input type="text" formControlName="descpt" placeholder="กรอกรายละเอียดเกี่ยวกับสถานที่"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>ชื่อ</ion-label>
+        <ion-input type="email" formControlName="fname" placeholder="กรอกชื่อผู้รายงาน"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>นามสกุล</ion-label>
+        <ion-input type="email" formControlName="sname" placeholder="กรอกนามสกุลผู้รายงาน"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button block icon-left (click)="takePicture()">
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon> ถ่ายภาพ
+    </button>
+    <ion-card>
+      <img [src]="imageURI" *ngIf="imageURI" />
+    </ion-card>
+
+    
+
+    <button ion-button block type="submit" [disabled]="!reportForm.valid" (click)="submit()">ส่งข้อมูล</button>
+  </form>
+</ion-content>
